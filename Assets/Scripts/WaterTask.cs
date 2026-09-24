@@ -18,7 +18,7 @@ public class WaterTask : MonoBehaviour
         if (used) return;
 
         hits++;
-        transform.localScale = transform.localScale * 1.05f;
+        if (leaf != null) leaf.transform.localScale = leaf.transform.localScale * 1.1f;
 
         AudioSource audio = GetComponent<AudioSource>();
         if (audio != null && waterSound != null) audio.PlayOneShot(waterSound);

@@ -9,6 +9,9 @@ public class LightAlignTask : MonoBehaviour
     public int needCount = 4;
     public Light growLight;
     public Color doneColor = Color.green;
+    public Transform plant;
+    public Renderer leaf;
+    public Color leafGreen = new Color(0.35f, 0.65f, 0.3f);
     public AudioClip turnSound;
     public AudioClip doneSound;
     public AudioClip denySound;
@@ -42,6 +45,8 @@ public class LightAlignTask : MonoBehaviour
                 growLight.intensity = 2f;
             }
             if (manager != null) manager.TaskDone(taskIndex);
+            if (plant != null) plant.localScale = plant.localScale * 1.3f;
+            if (leaf != null) leaf.material.color = leafGreen;
             AudioSource doneAudio = GetComponent<AudioSource>();
             if (doneAudio != null && doneSound != null) doneAudio.PlayOneShot(doneSound);
             Debug.Log("aligned " + taskIndex);

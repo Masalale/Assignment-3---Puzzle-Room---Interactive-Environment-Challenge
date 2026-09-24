@@ -4,12 +4,17 @@ public class DoorController : MonoBehaviour
 {
     public bool opened = false;
     public AudioClip openSound;
+    public float openDelay = 2f;
 
     public void Open()
     {
         if (opened) return;
         opened = true;
+        Invoke("Slide", openDelay);
+    }
 
+    void Slide()
+    {
         AudioSource audio = GetComponent<AudioSource>();
         if (audio != null && openSound != null) audio.PlayOneShot(openSound);
 

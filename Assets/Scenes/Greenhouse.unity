@@ -281,6 +281,37 @@ Transform:
   - {fileID: 68078238}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &152297969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152297970}
+  m_Layer: 0
+  m_Name: ExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &152297970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152297969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1430236349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182532628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1346,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
   m_PrefabInstance: {fileID: 718821614}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &718821616 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
+  m_PrefabInstance: {fileID: 718821614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &786138815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,6 +1609,9 @@ MonoBehaviour:
   needCount: 4
   growLight: {fileID: 68078237}
   doneColor: {r: 0, g: 1, b: 0, a: 1}
+  plant: {fileID: 1595969449}
+  leaf: {fileID: 1595969450}
+  leafGreen: {r: 0.35, g: 0.65, b: 0.3, a: 1}
   turnSound: {fileID: 8300000, guid: 9bb7e582f1936c745a474220e4655224, type: 3}
   doneSound: {fileID: 8300000, guid: fabece88686ce9d449d0c8a5f8e0e096, type: 3}
   denySound: {fileID: 8300000, guid: 5e4517f5606015948905503195716410, type: 3}
@@ -1930,6 +1969,9 @@ MonoBehaviour:
   needCount: 4
   growLight: {fileID: 786138817}
   doneColor: {r: 0, g: 1, b: 0, a: 1}
+  plant: {fileID: 1499857697}
+  leaf: {fileID: 1499857698}
+  leafGreen: {r: 0.35, g: 0.65, b: 0.3, a: 1}
   turnSound: {fileID: 8300000, guid: 9bb7e582f1936c745a474220e4655224, type: 3}
   doneSound: {fileID: 8300000, guid: fabece88686ce9d449d0c8a5f8e0e096, type: 3}
   denySound: {fileID: 0}
@@ -2870,6 +2912,7 @@ MonoBehaviour:
   timer: {fileID: 1372898382}
   player: {fileID: 1269015750}
   interactor: {fileID: 330585548}
+  exitPoint: {fileID: 152297970}
 --- !u!82 &1372898386
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3279,6 +3322,7 @@ Transform:
   - {fileID: 580159073}
   - {fileID: 998312324}
   - {fileID: 1916027304}
+  - {fileID: 152297970}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1458213093
@@ -3583,6 +3627,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
   m_PrefabInstance: {fileID: 1499857696}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &1499857698 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
+  m_PrefabInstance: {fileID: 1499857696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1510499213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,6 +3895,11 @@ PrefabInstance:
 --- !u!4 &1595969449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
+  m_PrefabInstance: {fileID: 1595969448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1595969450 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
   m_PrefabInstance: {fileID: 1595969448}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1664224799
@@ -4809,6 +4863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
   opened: 0
   openSound: {fileID: 8300000, guid: e1ad921b331c14b44bae841a583434e9, type: 3}
+  openDelay: 2
 --- !u!82 &1916027306
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5287,8 +5342,11 @@ MonoBehaviour:
   needCount: 4
   growLight: {fileID: 0}
   doneColor: {r: 0, g: 1, b: 0, a: 1}
+  plant: {fileID: 718821615}
+  leaf: {fileID: 718821616}
+  leafGreen: {r: 0.35, g: 0.65, b: 0.3, a: 1}
   turnSound: {fileID: 0}
-  doneSound: {fileID: 0}
+  doneSound: {fileID: 8300000, guid: fabece88686ce9d449d0c8a5f8e0e096, type: 3}
   denySound: {fileID: 0}
 --- !u!82 &2071131517
 AudioSource:

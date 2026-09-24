@@ -11,6 +11,7 @@ public class GameFlow : MonoBehaviour
     public WiltTimer timer;
     public PlayerMove player;
     public Interactor interactor;
+    public Transform exitPoint;
 
     bool started = false;
     bool ended = false;
@@ -47,13 +48,16 @@ public class GameFlow : MonoBehaviour
 
         if (puzzleManager != null && puzzleManager.IsAllDone())
         {
-            ended = true;
-            if (winPanel != null) winPanel.SetActive(true);
-            if (player != null) player.enabled = false;
-            if (interactor != null) interactor.enabled = false;
-            if (timer != null) timer.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            return;
+            if (exitPoint != null && player != null && Vector3.Distance(player.transform.position, exitPoint.position) < 1.5f)
+            {
+                ended = true;
+                if (winPanel != null) winPanel.SetActive(true);
+                if (player != null) player.enabled = false;
+                if (interactor != null) interactor.enabled = false;
+                if (timer != null) timer.enabled = false;
+                Cursor.lockState = CursorLockMode.None;
+                return;
+            }
         }
 
         if (timer != null && timer.lost)
