@@ -1513,7 +1513,7 @@ PrefabInstance:
       addedObject: {fileID: 823210696}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 823210695}
+      addedObject: {fileID: 823210699}
   m_SourcePrefab: {fileID: 100100000, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
 --- !u!4 &823210693 stripped
 Transform:
@@ -1525,21 +1525,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
   m_PrefabInstance: {fileID: 823210692}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &823210695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823210694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7b2582e30488c449f151833d0695b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleTask
-  manager: {fileID: 1372898383}
-  taskIndex: 3
-  used: 0
 --- !u!65 &823210696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1561,6 +1546,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &823210699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823210694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876c4a46f173ba14c8110c679d02a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightAlignTask
+  manager: {fileID: 1372898383}
+  taskIndex: 3
+  turnsNeeded: 2
+  needsOthersFirst: 0
+  needCount: 4
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,7 +1765,7 @@ PrefabInstance:
       addedObject: {fileID: 894667816}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 894667815}
+      addedObject: {fileID: 894667819}
   m_SourcePrefab: {fileID: 100100000, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
 --- !u!4 &894667813 stripped
 Transform:
@@ -1775,21 +1777,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
   m_PrefabInstance: {fileID: 894667812}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &894667815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894667814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7b2582e30488c449f151833d0695b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleTask
-  manager: {fileID: 1372898383}
-  taskIndex: 2
-  used: 0
 --- !u!65 &894667816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1811,6 +1798,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &894667819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894667814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876c4a46f173ba14c8110c679d02a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightAlignTask
+  manager: {fileID: 1372898383}
+  taskIndex: 2
+  turnsNeeded: 2
+  needsOthersFirst: 0
+  needCount: 4
 --- !u!1 &966654095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,7 +3043,7 @@ PrefabInstance:
       addedObject: {fileID: 1458213097}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1458213096}
+      addedObject: {fileID: 1458213100}
   m_SourcePrefab: {fileID: 100100000, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
 --- !u!4 &1458213094 stripped
 Transform:
@@ -3051,21 +3055,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
   m_PrefabInstance: {fileID: 1458213093}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1458213096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458213095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7b2582e30488c449f151833d0695b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleTask
-  manager: {fileID: 1372898383}
-  taskIndex: 1
-  used: 0
 --- !u!65 &1458213097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3087,6 +3076,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &1458213100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458213095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba97832e36054b4cae1f0d074d9fc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterTask
+  manager: {fileID: 1372898383}
+  taskIndex: 1
+  hitsNeeded: 3
 --- !u!1001 &1499857696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3751,7 +3755,7 @@ PrefabInstance:
       addedObject: {fileID: 1789019881}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1789019880}
+      addedObject: {fileID: 1789019884}
   m_SourcePrefab: {fileID: 100100000, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
 --- !u!4 &1789019878 stripped
 Transform:
@@ -3763,21 +3767,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
   m_PrefabInstance: {fileID: 1789019877}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1789019880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789019879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7b2582e30488c449f151833d0695b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleTask
-  manager: {fileID: 1372898383}
-  taskIndex: 0
-  used: 0
 --- !u!65 &1789019881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3799,6 +3788,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &1789019884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789019879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba97832e36054b4cae1f0d074d9fc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterTask
+  manager: {fileID: 1372898383}
+  taskIndex: 0
+  hitsNeeded: 3
 --- !u!1 &1835967423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4602,7 +4606,7 @@ PrefabInstance:
       addedObject: {fileID: 2071131513}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2071131512}
+      addedObject: {fileID: 2071131516}
   m_SourcePrefab: {fileID: 100100000, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
 --- !u!4 &2071131510 stripped
 Transform:
@@ -4614,21 +4618,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b12c9ce88b5c0ef419f7aaf2fbb470f1, type: 3}
   m_PrefabInstance: {fileID: 2071131509}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2071131512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071131511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7b2582e30488c449f151833d0695b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleTask
-  manager: {fileID: 1372898383}
-  taskIndex: 4
-  used: 0
 --- !u!65 &2071131513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4650,6 +4639,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &2071131516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071131511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876c4a46f173ba14c8110c679d02a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightAlignTask
+  manager: {fileID: 1372898383}
+  taskIndex: 4
+  turnsNeeded: 1
+  needsOthersFirst: 1
+  needCount: 4
 --- !u!1 &2107546675
 GameObject:
   m_ObjectHideFlags: 0
