@@ -7,6 +7,8 @@ public class LightAlignTask : MonoBehaviour
     public int turnsNeeded = 2;
     public bool needsOthersFirst = false;
     public int needCount = 4;
+    public Light growLight;
+    public Color doneColor = Color.green;
 
     int turns = 0;
     bool used = false;
@@ -27,6 +29,11 @@ public class LightAlignTask : MonoBehaviour
         if (turns >= turnsNeeded)
         {
             used = true;
+            if (growLight != null)
+            {
+                growLight.color = doneColor;
+                growLight.intensity = 2f;
+            }
             if (manager != null) manager.TaskDone(taskIndex);
             Debug.Log("aligned " + taskIndex);
         }

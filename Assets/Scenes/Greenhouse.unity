@@ -755,6 +755,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
   m_PrefabInstance: {fileID: 347311251}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &347311253 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
+  m_PrefabInstance: {fileID: 347311251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,6 +1568,8 @@ MonoBehaviour:
   turnsNeeded: 2
   needsOthersFirst: 0
   needCount: 4
+  growLight: {fileID: 68078237}
+  doneColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,6 +1822,8 @@ MonoBehaviour:
   turnsNeeded: 2
   needsOthersFirst: 0
   needCount: 4
+  growLight: {fileID: 786138817}
+  doneColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &966654095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3100,8 @@ MonoBehaviour:
   manager: {fileID: 1372898383}
   taskIndex: 1
   hitsNeeded: 3
+  wetColor: {r: 0.3, g: 0.5, b: 0.25, a: 1}
+  leaf: {fileID: 1859455211}
 --- !u!1001 &1499857696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3803,6 +3814,8 @@ MonoBehaviour:
   manager: {fileID: 1372898383}
   taskIndex: 0
   hitsNeeded: 3
+  wetColor: {r: 0.3, g: 0.5, b: 0.25, a: 1}
+  leaf: {fileID: 347311253}
 --- !u!1 &1835967423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,6 +4021,11 @@ PrefabInstance:
 --- !u!4 &1859455210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
+  m_PrefabInstance: {fileID: 1859455209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1859455211 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 59f4ec8329d4abe4c8948070ae8d695f, type: 3}
   m_PrefabInstance: {fileID: 1859455209}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861514346
@@ -4656,6 +4674,8 @@ MonoBehaviour:
   turnsNeeded: 1
   needsOthersFirst: 1
   needCount: 4
+  growLight: {fileID: 0}
+  doneColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &2107546675
 GameObject:
   m_ObjectHideFlags: 0
