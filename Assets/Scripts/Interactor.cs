@@ -3,7 +3,7 @@ using UnityEngine;
 public class Interactor : MonoBehaviour
 {
     public float distance = 3f;
-
+ 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))

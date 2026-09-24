@@ -6,6 +6,7 @@ public class WiltTimer : MonoBehaviour
     public float timeLeft = 300f;
     public Text timerText;
     public bool lost = false;
+    public AudioClip loseSound;
 
     void Update()
     {
@@ -24,6 +25,8 @@ public class WiltTimer : MonoBehaviour
         if (timeLeft <= 0f)
         {
             lost = true;
+            AudioSource audio = GetComponent<AudioSource>();
+            if (audio != null && loseSound != null) audio.PlayOneShot(loseSound);
             Debug.Log("time up - you wilted");
         }
     }

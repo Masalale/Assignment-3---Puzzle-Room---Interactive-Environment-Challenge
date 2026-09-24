@@ -7,6 +7,8 @@ public class WaterTask : MonoBehaviour
     public int hitsNeeded = 3;
     public Color wetColor = new Color(0.3f, 0.5f, 0.25f);
     public Renderer leaf;
+    public AudioClip waterSound;
+    public AudioClip doneSound;
 
     int hits = 0;
     bool used = false;
@@ -18,12 +20,17 @@ public class WaterTask : MonoBehaviour
         hits++;
         transform.localScale = transform.localScale * 1.05f;
 
+        AudioSource audio = GetComponent<AudioSource>();
+        if (audio != null && waterSound != null) audio.PlayOneShot(waterSound);
+
         if (leaf != null) leaf.material.color = wetColor;
 
         if (hits >= hitsNeeded)
         {
             used = true;
             if (manager != null) manager.TaskDone(taskIndex);
+            AudioSource audio2 = GetComponent<AudioSource>();
+            if (audio2 != null && doneSound != null) audio2.PlayOneShot(doneSound);
             Debug.Log("watered " + taskIndex);
         }
     }
