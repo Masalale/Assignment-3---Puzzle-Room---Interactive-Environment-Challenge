@@ -35,10 +35,5 @@ public class PlayerMove : MonoBehaviour
         move.y = -2f;
 
         controller.Move(move * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
     }
 }
