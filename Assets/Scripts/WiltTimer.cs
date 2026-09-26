@@ -27,7 +27,6 @@ public class WiltTimer : MonoBehaviour
             lost = true;
             AudioSource audio = GetComponent<AudioSource>();
             if (audio != null && loseSound != null) audio.PlayOneShot(loseSound);
-            Debug.Log("time up - you wilted");
         }
     }
 }

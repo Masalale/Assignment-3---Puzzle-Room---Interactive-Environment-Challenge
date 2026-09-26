@@ -37,7 +37,6 @@ public class WaterTask : MonoBehaviour
         {
             AudioSource denyAudio = GetComponent<AudioSource>();
             if (denyAudio != null && denySound != null) denyAudio.PlayOneShot(denySound);
-            Debug.Log("need a filled bucket first");
             return;
         }
 
@@ -55,7 +54,6 @@ public class WaterTask : MonoBehaviour
             if (inter != null) inter.bucketFilled = false;
             AudioSource audio2 = GetComponent<AudioSource>();
             if (audio2 != null && doneSound != null) audio2.PlayOneShot(doneSound);
-            Debug.Log("watered " + taskIndex);
         }
     }
 }

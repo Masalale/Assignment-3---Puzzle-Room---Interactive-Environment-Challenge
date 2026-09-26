@@ -41,14 +41,11 @@ public class LightAlignTask : MonoBehaviour
         {
             AudioSource denyAudio0 = GetComponent<AudioSource>();
             if (denyAudio0 != null && denySound != null) denyAudio0.PlayOneShot(denySound);
-            if (requiredTool == "") Debug.Log("PotE wants empty hands - press Q to drop");
-            else Debug.Log("need the lamp first");
             return;
         }
 
         if (needsOthersFirst && manager != null && manager.Count() < needCount)
         {
-            Debug.Log("not yet - finish others first");
             AudioSource denyAudio = GetComponent<AudioSource>();
             if (denyAudio != null && denySound != null) denyAudio.PlayOneShot(denySound);
             return;
@@ -80,7 +77,6 @@ public class LightAlignTask : MonoBehaviour
             }
             AudioSource doneAudio = GetComponent<AudioSource>();
             if (doneAudio != null && doneSound != null) doneAudio.PlayOneShot(doneSound);
-            Debug.Log("aligned " + taskIndex);
         }
     }
 }
