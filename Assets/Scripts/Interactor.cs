@@ -6,29 +6,12 @@ public class Interactor : MonoBehaviour
     public string carried = "";
     public GameObject carriedObj;
     public bool bucketFilled = false;
- 
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (carried != "")
-            {
-                if (carriedObj != null)
-                {
-                    ToolPickup tool = carriedObj.GetComponent<ToolPickup>();
-                    if (tool != null)
-                    {
-                        tool.SendBack();
-                    }
-                    else
-                    {
-                        carriedObj.transform.position = transform.position + transform.forward * 1f;
-                        carriedObj.SetActive(true);
-                    }
-                }
-                carried = "";
-                carriedObj = null;
-            }
+            if (carried != "") DropCarried();
             return;
         }
 
@@ -41,5 +24,12 @@ public class Interactor : MonoBehaviour
                 hit.collider.SendMessage("Interact", SendMessageOptions.DontRequireReceiver);
             }
         }
+    }
+
+    public void DropCarried()
+    {
+        if (carriedObj != null) carriedObj.GetComponent<ToolPickup>().SendBack();
+        carried = "";
+        carriedObj = null;
     }
 }

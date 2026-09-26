@@ -16,9 +16,6 @@ public class WaterTap : MonoBehaviour
 
     void Interact()
     {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (interactor == null) interactor = FindFirstObjectByType<Interactor>();
-
         isPouring = !isPouring;
 
         if (isPouring)
@@ -35,9 +32,9 @@ public class WaterTap : MonoBehaviour
                 audioSource.Play();
             }
         }
-        else
+        else if (audioSource != null)
         {
-            if (audioSource != null) audioSource.Stop();
+            audioSource.Stop();
         }
     }
 }

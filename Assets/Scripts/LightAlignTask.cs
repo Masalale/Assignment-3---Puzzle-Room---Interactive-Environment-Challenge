@@ -17,12 +17,16 @@ public class LightAlignTask : MonoBehaviour
     public AudioClip denySound;
     public string requiredTool = "lamp";
 
+    Interactor inter;
+    AudioSource sfx;
     int turns = 0;
     bool used = false;
 
     void Start()
     {
         ShowStage(1);
+        inter = FindFirstObjectByType<Interactor>();
+        sfx = GetComponent<AudioSource>();
     }
 
     void ShowStage(int n)
@@ -36,26 +40,22 @@ public class LightAlignTask : MonoBehaviour
     {
         if (used) return;
 
-        Interactor inter = FindFirstObjectByType<Interactor>();
         if (inter == null || inter.carried != requiredTool)
         {
-            AudioSource denyAudio0 = GetComponent<AudioSource>();
-            if (denyAudio0 != null && denySound != null) denyAudio0.PlayOneShot(denySound);
+            if (sfx != null && denySound != null) sfx.PlayOneShot(denySound);
             return;
         }
 
         if (needsOthersFirst && manager != null && manager.Count() < needCount)
         {
-            AudioSource denyAudio = GetComponent<AudioSource>();
-            if (denyAudio != null && denySound != null) denyAudio.PlayOneShot(denySound);
+            if (sfx != null && denySound != null) sfx.PlayOneShot(denySound);
             return;
         }
 
         turns++;
         transform.Rotate(0, 90, 0);
         if (turns == 1 && turnsNeeded > 1) ShowStage(2);
-        AudioSource turnAudio = GetComponent<AudioSource>();
-        if (turnAudio != null && turnSound != null) turnAudio.PlayOneShot(turnSound);
+        if (sfx != null && turnSound != null) sfx.PlayOneShot(turnSound);
 
         if (turns >= turnsNeeded)
         {
@@ -67,16 +67,8 @@ public class LightAlignTask : MonoBehaviour
             }
             if (manager != null) manager.TaskDone(taskIndex);
             ShowStage(3);
-            if (inter != null)
-            {
-                ToolPickup tp = null;
-                if (inter.carriedObj != null) tp = inter.carriedObj.GetComponent<ToolPickup>();
-                inter.carried = "";
-                inter.carriedObj = null;
-                if (tp != null) tp.SendBack();
-            }
-            AudioSource doneAudio = GetComponent<AudioSource>();
-            if (doneAudio != null && doneSound != null) doneAudio.PlayOneShot(doneSound);
+            inter.DropCarried();
+            if (sfx != null && doneSound != null) sfx.PlayOneShot(doneSound);
         }
     }
 }

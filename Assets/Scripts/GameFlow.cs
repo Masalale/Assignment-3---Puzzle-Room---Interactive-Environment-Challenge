@@ -22,11 +22,7 @@ public class GameFlow : MonoBehaviour
         if (winPanel != null) winPanel.SetActive(false);
         if (losePanel != null) losePanel.SetActive(false);
 
-        if (player != null) player.enabled = false;
-        if (interactor != null) interactor.enabled = false;
-        if (timer != null) timer.enabled = false;
-
-        Cursor.lockState = CursorLockMode.None;
+        SetPlaying(false);
     }
 
     public void StartGame()
@@ -35,38 +31,36 @@ public class GameFlow : MonoBehaviour
         started = true;
 
         if (startPanel != null) startPanel.SetActive(false);
-        if (player != null) player.enabled = true;
-        if (interactor != null) interactor.enabled = true;
-        if (timer != null) timer.enabled = true;
+        SetPlaying(true);
+    }
 
-        Cursor.lockState = CursorLockMode.Locked;
+    void SetPlaying(bool on)
+    {
+        if (player != null) player.enabled = on;
+        if (interactor != null) interactor.enabled = on;
+        if (timer != null) timer.enabled = on;
+        Cursor.lockState = on ? CursorLockMode.Locked : CursorLockMode.None;
     }
 
     void Update()
     {
         if (!started || ended) return;
 
-        if (puzzleManager != null && puzzleManager.IsAllDone())
-        {
-            if (exitPoint != null && player != null && Vector3.Distance(player.transform.position, exitPoint.position) < 1.5f)
-            {
-                ended = true;
-                if (winPanel != null) winPanel.SetActive(true);
-                if (player != null) player.enabled = false;
-                if (interactor != null) interactor.enabled = false;
-                if (timer != null) timer.enabled = false;
-                Cursor.lockState = CursorLockMode.None;
-                return;
-            }
-        }
-
         if (timer != null && timer.lost)
         {
             ended = true;
             if (losePanel != null) losePanel.SetActive(true);
-            if (player != null) player.enabled = false;
-            if (interactor != null) interactor.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
+            SetPlaying(false);
+            return;
+        }
+
+        if (puzzleManager != null && puzzleManager.IsAllDone()
+            && exitPoint != null && player != null
+            && Vector3.Distance(player.transform.position, exitPoint.position) < 1.5f)
+        {
+            ended = true;
+            if (winPanel != null) winPanel.SetActive(true);
+            SetPlaying(false);
         }
     }
 

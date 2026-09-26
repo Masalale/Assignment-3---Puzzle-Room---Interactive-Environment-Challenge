@@ -13,12 +13,16 @@ public class WaterTask : MonoBehaviour
     public AudioClip denySound;
     public string requiredTool = "hose";
 
+    Interactor inter;
+    AudioSource sfx;
     int hits = 0;
     bool used = false;
 
     void Start()
     {
         ShowStage(1);
+        inter = FindFirstObjectByType<Interactor>();
+        sfx = GetComponent<AudioSource>();
     }
 
     void ShowStage(int n)
@@ -32,28 +36,23 @@ public class WaterTask : MonoBehaviour
     {
         if (used) return;
 
-        Interactor inter = FindFirstObjectByType<Interactor>();
         if (inter == null || inter.carried != requiredTool || !inter.bucketFilled)
         {
-            AudioSource denyAudio = GetComponent<AudioSource>();
-            if (denyAudio != null && denySound != null) denyAudio.PlayOneShot(denySound);
+            if (sfx != null && denySound != null) sfx.PlayOneShot(denySound);
             return;
         }
 
         hits++;
         if (hits == 1) ShowStage(2);
         if (hits == 2) ShowStage(3);
-
-        AudioSource audio = GetComponent<AudioSource>();
-        if (audio != null && waterSound != null) audio.PlayOneShot(waterSound);
+        if (sfx != null && waterSound != null) sfx.PlayOneShot(waterSound);
 
         if (hits >= hitsNeeded)
         {
             used = true;
             if (manager != null) manager.TaskDone(taskIndex);
-            if (inter != null) inter.bucketFilled = false;
-            AudioSource audio2 = GetComponent<AudioSource>();
-            if (audio2 != null && doneSound != null) audio2.PlayOneShot(doneSound);
+            inter.bucketFilled = false;
+            if (sfx != null && doneSound != null) sfx.PlayOneShot(doneSound);
         }
     }
 }
