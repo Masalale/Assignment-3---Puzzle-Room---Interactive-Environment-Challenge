@@ -1,10 +1,11 @@
 using UnityEngine;
 
+// Raycasts from the camera to interact, and tracks the carried tool.
 public class Interactor : MonoBehaviour
 {
     public float distance = 3f;
 
-    // this name is how the tasks know what I'm holding, so it has to match their required tool
+    // Tool name the pot scripts check against.
     public string carried = "";
     public GameObject carriedObj;
     public bool bucketFilled = false;
@@ -23,13 +24,13 @@ public class Interactor : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, distance))
             {
-                // I use SendMessage because Interact() is private on the task scripts.
-                // DontRequireReceiver stops it complaining about things that can't be used.
+                // Interact() is private on the task scripts, so it is called by name.
                 hit.collider.SendMessage("Interact", SendMessageOptions.DontRequireReceiver);
             }
         }
     }
 
+    // Shared by the Q key and by the light pots when the lamp runs out.
     public void DropCarried()
     {
         if (carriedObj != null) carriedObj.GetComponent<ToolPickup>().SendBack();

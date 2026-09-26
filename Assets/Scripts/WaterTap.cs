@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Toggle for the pouring water sound. Fills the bucket while it is on.
 public class WaterTap : MonoBehaviour
 {
     public AudioClip pourSound;

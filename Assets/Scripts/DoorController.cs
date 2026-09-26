@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Opens the exit door when PuzzleManager completes all five tasks.
 public class DoorController : MonoBehaviour
 {
     public bool opened = false;

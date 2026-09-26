@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Counts down the timer and raises the lose state.
 public class WiltTimer : MonoBehaviour
 {
     public float timeLeft = 300f;

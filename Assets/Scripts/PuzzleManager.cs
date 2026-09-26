@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Tracks the five tasks with a bool array and opens the door when all are done.
 public class PuzzleManager : MonoBehaviour
 {
     public Text progressText;
@@ -27,6 +28,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
+    // Drives the on screen progress counter.
     public int Count()
     {
         int c = 0;
@@ -39,7 +41,7 @@ public class PuzzleManager : MonoBehaviour
         return Count() >= 5;
     }
 
-    // called UpdateUI not Update on purpose, if I called it Update Unity would run it every frame
+    // Named UpdateUI so Unity does not call it every frame.
     void UpdateUI()
     {
         if (progressText != null)

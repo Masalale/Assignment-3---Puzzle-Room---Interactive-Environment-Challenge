@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Lets a tool be picked up and returned to its start position.
 public class ToolPickup : MonoBehaviour
 {
     public string toolName = "hose";
@@ -19,7 +20,7 @@ public class ToolPickup : MonoBehaviour
         if (inter == null) return;
 
         string name = toolName;
-        // the decoy tools are all set to "random" so I fall back to the object name
+        // Decoy tools are set to "random" and fall back to the object name.
         if (name == "" || name.ToLower() == "random") name = gameObject.name;
 
         if (inter.carried == name) return;
@@ -31,7 +32,7 @@ public class ToolPickup : MonoBehaviour
 
         if (pickupSound != null) AudioSource.PlayClipAtPoint(pickupSound, transform.position);
 
-        // hiding the object is how I show that it's being carried
+        // Hidden while the tool is carried.
         gameObject.SetActive(false);
     }
 

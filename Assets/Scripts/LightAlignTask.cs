@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Light pot logic. Requires a tool, grows the plant, then consumes the tool.
 public class LightAlignTask : MonoBehaviour
 {
     public PuzzleManager manager;

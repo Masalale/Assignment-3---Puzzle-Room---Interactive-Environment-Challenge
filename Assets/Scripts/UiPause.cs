@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Escape menu. Pauses time and hides the crosshair while open.
 public class UiPause : MonoBehaviour
 {
     public GameObject pausePanel;

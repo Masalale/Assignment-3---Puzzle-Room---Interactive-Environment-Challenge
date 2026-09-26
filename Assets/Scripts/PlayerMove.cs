@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Character movement and mouse look.
 public class PlayerMove : MonoBehaviour
 {
     public float speed = 4f;

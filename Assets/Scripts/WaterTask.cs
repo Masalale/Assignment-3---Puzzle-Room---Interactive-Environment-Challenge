@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Watering pot logic. Requires a filled bucket and grows the plant in stages.
 public class WaterTask : MonoBehaviour
 {
     public PuzzleManager manager;
@@ -25,6 +26,7 @@ public class WaterTask : MonoBehaviour
         sfx = GetComponent<AudioSource>();
     }
 
+    // Switches between the L1, L2 and L3 plant models.
     void ShowStage(int n)
     {
         if (stage1 != null) stage1.SetActive(n == 1);
@@ -32,6 +34,7 @@ public class WaterTask : MonoBehaviour
         if (stage3 != null) stage3.SetActive(n == 3);
     }
 
+    // Wrong tool plays the same sound that tool makes on pickup.
     void Interact()
     {
         if (used) return;
