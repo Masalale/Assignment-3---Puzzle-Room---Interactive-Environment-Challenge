@@ -6,6 +6,27 @@ Five dying pots, five minutes before they wilt, and one door that only opens whe
 
 There's no instruction text in the room. Walk up to a pot you can't help yet and it plays the sound of the tool it wants: a water drop, or a light bulb click. Learn the room by ear, find what you heard, and get out.
 
+## Puzzle tasks
+
+Five tasks, tracked as `0/5` in the corner. They are not five separate puzzles, they chain off each other through tool scarcity.
+
+| # | Pot | Needs | Solved by |
+| :-- | :--- | :--- | :--- |
+| 1 | PotA | Water | Fill the bucket at the tap, water 3 times |
+| 2 | PotB | Water | Refill at the tap, water 3 times |
+| 3 | PotC | Light | Carry the lamp, turn the pot 2 times |
+| 4 | PotD | Light | Walk back to the lamp, carry it over, turn 2 times |
+| 5 | PotE | The sack | Drop the lamp with `Q`, fetch the sack, place it |
+
+The links that bind them:
+
+- The **bucket holds one watering**, so every pot needs a trip back to the tap.
+- The **lamp is single-use** and returns to where you found it, so PotC and PotD each need a separate fetch.
+- You can only **carry one tool at a time**, so switching between water and light means dropping what you're holding.
+- **PotE refuses to open until the other four are done**, so it has to be last.
+
+Complete all five and the door unlocks. Walk out through it to win. If the timer runs out first, everything wilts and you lose.
+
 ## Controls
 
 | Key | Action |
