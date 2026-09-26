@@ -38,6 +38,7 @@ public class GameFlow : MonoBehaviour
     {
         if (player != null) player.enabled = on;
         if (interactor != null) interactor.enabled = on;
+        // switching the timer off is what freezes the countdown, it reads Time.deltaTime in Update
         if (timer != null) timer.enabled = on;
         Cursor.lockState = on ? CursorLockMode.Locked : CursorLockMode.None;
     }
@@ -54,6 +55,7 @@ public class GameFlow : MonoBehaviour
             return;
         }
 
+        // the door opening isn't the win, the player still has to walk out through it
         if (puzzleManager != null && puzzleManager.IsAllDone()
             && exitPoint != null && player != null
             && Vector3.Distance(player.transform.position, exitPoint.position) < 1.5f)

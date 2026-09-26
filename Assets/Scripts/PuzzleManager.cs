@@ -39,6 +39,7 @@ public class PuzzleManager : MonoBehaviour
         return Count() >= 5;
     }
 
+    // called UpdateUI not Update on purpose, if I called it Update Unity would run it every frame
     void UpdateUI()
     {
         if (progressText != null)
